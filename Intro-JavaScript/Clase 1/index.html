@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Introducción a JavaScript - Clase 1</title>
+		<style type="text/css">
+			body{
+				color: green;
+				background-color: black;
+			}
+		</style>
+		<script type="text/javascript">
+			/*
+			console.log("Hola mundo");
+			document.write("Hola mundo");
+			alert("Hola mundo");
+			prompt("Cuantos años tenes?");
+			*/
+			var sustraendo;
+			var minuendo;
+			var resultado;
+
+			sustraendo = prompt("Ingrese un número");
+
+			minuendo = prompt("Ingrese otro número");
+
+			sustraendo = parseInt(sustraendo);
+
+			// parseInt() sirve para indicarle a JavaScript que el valor de la variable es en realidad un Int y no un String.
+
+			minuendo = parseInt(minuendo);
+
+			resultado = sustraendo + minuendo;
+
+			alert("El resultado es " + resultado);
+
+			console.log("S= " + sustraendo, "M= " + minuendo, "R= " + resultado);
+
+		</script>
+	</head>
+	<body>
+		<p>Hola</p>
+	</body>
+</html>

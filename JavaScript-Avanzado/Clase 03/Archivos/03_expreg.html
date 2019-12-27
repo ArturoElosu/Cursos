@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+        .conError {
+            border-width: 3px;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <form id="main">
+        <p id="cajaEmail">
+            <label>Email</label>
+            <input type="text" name="email">
+            <span></span>
+        </p>
+        <p id="cajaClave">
+            <label>Clave</label>
+            <input type="text" name="clave">
+            <span></span>
+        </p>
+        <button>Guardar</button>
+    </form>
+    <script>
+        const cajaEmail = document.getElementById("cajaEmail");
+        const cajaClave = document.getElementById("cajaClave");
+        const inputEmail = cajaEmail.querySelector("[name=email]");
+        const inputClave = cajaClave.querySelector("[name=clave]");
+        const form = document.getElementById("main");
+        /* 
+        Las expresiones regulares permiten determinar qué queremos
+         que se escriba en un espacio determinado.
+        */
+        //const expEmail = new RegExp("/^[\._a-z0-9-]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i");
+        const expEmail = /^[\._a-z0-9-]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i;
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            let errores = false;
+            /* ------------------------ Disparar programativamente los BLUR. ------------------------- */
+            const eventoBlur = new Event("blur");
+            inputEmail.dispatchEvent(eventoBlur);
+            inputClave.dispatchEvent(eventoBlur);
+            /* --------------------------------------------------------------------------------------- */
+            if(inputEmail.classList.contains("conError") || inputClave.classList.contains("conError")){
+                errores = true;
+            };
+            if(!errores){
+                e.target.submit();
+            };
+        });
+        inputEmail.addEventListener('blur', e => {
+            if(expEmail.test(inputEmail.value)){
+                inputEmail.classList.remove("conError");
+            } else {
+                inputEmail.classList.add("conError");
+            };
+        });
+        inputClave.addEventListener('blur', e => {
+            if(inputClave.value == ""){
+                inputClave.classList.add("conError");
+            } else {
+                inputClave.classList.remove("conError");
+            };
+        });
+    </script>
+</body>
+</html>

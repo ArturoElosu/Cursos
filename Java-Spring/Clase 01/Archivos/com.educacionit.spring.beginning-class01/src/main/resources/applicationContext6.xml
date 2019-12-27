@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+   - name:        applicationContext6.xml
+   - description: Spring application context.
+   - author:      Raul Pena (raul.pena@hotmail.com)
+   -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	                       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+	
+	
+	<!-- 
+	   - Add beans resources. 
+	   -->
+	<bean id="myCollectionsBean" 
+	      class="com.educacionit.spring.beginning.class01.collection.MyCollections">
+
+        <property name="set">
+            <set>
+                <value>RajaMouli</value>
+                <value>Steven Spielberg</value>
+                <value>Martin Scorsese</value>
+                <value>Alfred Hitchcock</value>
+            </set>
+        </property>
+        
+        <property name="list">
+            <list>
+                <value>RajaMouli</value>
+                <value>Steven Spielberg</value>
+                <value>Martin Scorsese</value>
+                <value>Alfred Hitchcock</value>
+            </list>
+      </property>
+        
+    </bean>
+    
+    
+    
+</beans>

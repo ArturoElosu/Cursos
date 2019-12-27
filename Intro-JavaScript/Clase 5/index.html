@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Intro Java Script - Clase 5</title>
+		<script type="text/javascript">
+			/*
+			// Ésta función genera números repetidos.
+			function numeroEntre1y100() {
+				for (var i = 0; i < 5; i++) {
+					var p = Math.random()*100;
+					p = Math.floor(p);
+					p++;
+					console.log(p);
+				}
+			}
+
+			function numeroEntre1y100(array) {
+				var p = Math.random()*100;
+				p = Math.floor(p);
+				p++;
+				if (array.indexOf(p) >= 0) {
+					var l = numeroEntre1y100(array);
+					return l;
+				} else {
+					return p;
+				}
+			}
+
+			var numeros = new Array();
+
+			for (var i = 0; i < 5; i++) {
+				var t = numeroEntre1y100(numeros);
+				numeros.push(t);
+				console.log(t);
+			}*/
+		</script>
+	</head>
+	<body>
+		<div>juan <input id="juan" value="0">
+			<a onclick="sumarA('#juan');">Sumar.</a>
+		</div>
+
+		<div>maria <input id="maria" value="0">
+			<a onclick="sumarA('#maria');">Sumar.</a>
+		</div>
+
+		<div>jose <input id="jose" value="0">
+			<a onclick="sumarA('#jose');">Sumar.</a>
+		</div>
+
+		<button>
+			<a onclick="vender('#juan', '#maria', 50);">Juan le vende a María.</a>
+		</button>
+
+		<button>
+			<a onclick="vender('#juan', '#jose', 50);">Juan le vende a Jose.</a>
+		</button><br><br>
+
+		<button>
+			<a onclick="vender('#jose', '#maria', 50);">José le vende a María.</a>
+		</button>
+
+		<button>
+			<a onclick="vender('#jose', '#juan', 50);">José le vende a Juan.</a>
+		</button><br><br>
+
+		<button>
+			<a onclick="vender('#maria', '#juan', 50);">María le vende a Juan.</a>
+		</button>
+
+		<button>
+			<a onclick="vender('#maria', '#jose', 50);">María le vende a José.</a>
+		</button>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+		<script type="text/javascript">
+			function sumarA(campoId, monto) {
+				if (monto==undefined) {
+					monto = 10;
+				}
+				var nuevo = parseInt($(campoId).val()) + monto;
+				$(campoId).val(nuevo);
+			}
+
+			function vender(vendedor, comprador, monto) {
+				if (monto==undefined) {
+					monto = 10;
+				}
+				if ($(comprador).val()>=50) {
+					sumarA(vendedor, monto);
+					sumarA(comprador, -monto);
+			}
+			}
+		</script>
+	</body>
+</html>

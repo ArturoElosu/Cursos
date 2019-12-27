@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario Clase HTML</title>
+    
+    <!-- ESTILOS CSS -->
+    <style>
+    
+        body{
+            background-color: #429dad;
+            font-family: arial, helvetica, sans-serif;
+        }
+        
+        h1{
+            color: #fff;
+            text-shadow: 0px 0px 10px #000;
+            text-align: center;
+        }
+        
+        form{
+            width: 500px;
+            height: auto;
+            background-color: #11788b;
+            padding: 10px;
+            box-shadow: 0px 0px 10px #000;
+            margin: auto;
+        }
+        
+        input, textarea{
+            width:250px;
+        }
+        
+        label{
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>Fomulario de consulta:</h1>
+    <form action="enviar.php" method="post">
+        <input type="text" name="nombres" value="" placeholder="Nombre y Apellido" size="25"/>
+        <br>
+        <br>
+        <input type="email" name="email" value="" placeholder="Coloque su E-mail" size="25"/>
+        <br>
+        <br>
+        <label for="ci">Carrera IT:</label>
+        <br>
+        <select id="so" name="carrea">
+        <option value="" selected="selected">- seleccioná -</option>
+        <option value="windows">Diseño Web</option>
+        <option value="mac">Diseño Gráfico</option>
+        <option value="linux">Fotografía</option>
+        <option value="otro">Otro</option>
+        </select>
+        
+        <br>
+        <br>
+        <label for="ci">Comentario:</label>
+        <br>
+        <textarea name="consulta" cols="27" rows="7"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Enviar Comentario"/>
+    </form>
+    
+    <br>
+    <br>
+    <hr>
+    
+    
+</body>
+
+
+</html>

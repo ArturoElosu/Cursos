@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos</title>
+</head>
+<body>
+    
+    <button id="btnHola">Saludar</button>
+    <script>
+        // Captura.
+        const boton = document.getElementById("btnHola");
+        // Manipulación (no se modifica la variable sino el objeto)
+        boton.textContent = "Nuevo Saludo"; // Contenido.
+        boton.classList.add("redondeado"); // Estilos.
+        boton.onclick = function(){ // Acciones o eventos.
+            alert("Hola mundo!");
+        };
+
+        // Eventos.
+        boton.addEventListener('click', () => {alert("Hola Mundo!");});
+
+        // -----------------------------------------------------------------
+
+        function suma(...p){
+            let r = 0;
+            p.forEach(e => r+=e);
+            return r;
+        }
+
+        console.log(suma(10, 20, 30));
+    </script>
+
+</body>
+</html>

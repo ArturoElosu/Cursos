@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formularios</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <ul id="errores"></ul>
+    <form action="procesar.php" method="GET">
+        <p>
+            <label for="username">Nombre de usuario</label>
+            <br>
+            <input type="text" id="username" name="username">
+        </p>
+        <p>
+            <label>Clave</label>
+            <br>
+            <input type="text" name="clave">
+        </p>
+            <input type="submit" value="Entrar">
+    </form>
+
+    <script>
+        function validar(e){
+            e.preventDefault();
+            //alert("Validando...");
+            let f = e.target;
+            // let inputClave = document.querySelector("input[name=clave]"); Funciona pero toma el 1er elemento que coincida con estos parámetros.
+            let inputClave = f.querySelector("input[name=clave]"); // Busca en el form esos parámetros.
+            let inputUsuario = f.querySelector("input[name=username]");
+            // inputClave.value
+            // 1- Defino estado.
+            let errores = [];
+            // 2- Buscar posibles errores.
+            if(inputClave.value == ""){
+                errores.push("Clave errónea.");
+            }
+            if(inputUsuario.value.lenght <= 3){
+                errores.push("UserName debe tener más de 3 caracteres.");
+            }
+            // 3- Pregunto si no hay errores, envío el formulario.
+            // ("", 0, 0.0, false, null, undefined, NaN) son valores que arrojan FALSE.
+            /*if(!errores){
+                f.submit();
+            }*/
+            if(errores.length==0){
+                f.submit();
+            } else {
+                let ul = document.getElementById("errores");
+                ul.innerHTML = errores.map(el=>`<li>${el}</li>`).join("");
+            }
+        }
+        const formulario = document.querySelector("form");
+        formulario.addEventListener("submit", validar)
+    </script>
+
+</body>
+</html>

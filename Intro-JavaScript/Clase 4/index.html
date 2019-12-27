@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Intro JavaScript - Clase 4</title>
+		<style type="text/css">
+			p {
+				margin-left: 330px;
+				margin-right: auto;
+			}
+			input {
+				margin-left: 280px;
+				margin-right: auto;
+			}
+			body {
+				background-color: black;
+				color: red;
+			}
+			span {
+				color: yellow;
+			}
+			a {
+				margin-left: 330px;
+				margin-right: auto;
+			}
+			div {
+				margin-left: 360px;
+				margin-right: auto;
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+		<div id="salida"></div>
+		
+		<input id="dato">
+
+		<a onclick="saludar();">listo</a>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+			// Dejar un comentario.
+			$("#salida").html("hola mundo"); // El $ sirve para iniciar el comando jQuery
+
+			function saludar() {
+				var coso = $('#dato').val();
+				$("#salida").html("hola " + coso);
+			}
+		</script> -->
+
+		<p>Ingresa tu DNI:</p><br>
+
+		<input id="dni1"><span id="error1"></span><br><hr>
+
+		<input id="dni2"><span id="error2"></span><br><hr>
+
+		<input id="dni3"><span id="error3"></span><br><hr>
+
+		<input id="dni4"><span id="error4"></span><br><hr>
+
+		<p>Listo?</p>
+
+		<a onclick="saludar()">Listo!</a>
+
+		<div id="salida"></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		
+		<script type="text/javascript">
+
+			function saludar() {
+				validaDNI("#dni1","#error1", false);
+				validaDNI("#dni2","#error2", true);
+				validaDNI("#dni3","#error3", true);
+				validaDNI("#dni4","#error4", false);
+			}
+
+			function validaDNI(campoId,errorId,debeSerPar) {
+				var dni = $(campoId).val();
+				if (isNaN(dni)) {
+					$(errorId).html("El DNI ingresado no es un número.")
+				} else if ((dni%2!=0) && debeSerPar) {
+					$(errorId).html("Debe ser par!");
+				} else if ((dni>1000000) && (dni<100000000)) {
+					$("#salida").html("El DNI es correcto!");
+				} else {
+					$(errorId).html("El DNI ingresado es inválido.")
+				}
+			}
+
+
+		</script>
+
+	</body>
+</html>

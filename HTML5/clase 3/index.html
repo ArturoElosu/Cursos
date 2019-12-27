@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<title>Formulario sencillo</title>
+		<style type="text/css">
+			input {
+				width: 180px;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="archivo.php" method="post">
+			<fieldset style="width: 200px; margin-left: auto; margin-right: auto; ">
+				<legend style="color: blue;">Mi formulario:</legend>
+				<label for="Nombre_cliente">
+					<u>Nombre:</u> <br> <input type="text" id="Nombre_cliente" name="Nombre" required=""> <!-- El atributo ID está relacionada con FOR-->
+				<br>
+				<label>
+					<u>Email:</u> <br> <input type="Email" placeholder="nombre@dominio.com" name="Email" required=""> <!-- El atributo PLACEHOLDER sirve para indicar un ejemplo al usuario-->
+				</label>
+				<br>
+				<label>
+					<u>Edad:</u> <br> <input type="number" min="18" max="65" name="Edad" required=""> <!-- Los atributos MIN y MAX sirven para darle un rango al intervalo numérico que se va a colocar-->
+				</label>
+				<br>
+				<label>
+					<u>Password:</u> <br> <input type="Password" maxlength="16" minlength="8" name="Password" required="">
+				</label>
+				<br>
+				<label>
+					<u>Localidad:</u> <br> <select title="Seleccione su localidad" name="Localidad">
+						<option value="" selected="">Seleccione su localidad</option>
+						<option value="Buenos Aires">Buenos Aires</option>
+						<option value="Cordoba">Cordoba</option>
+						<option value="Rio Negro">Rio Negro</option>
+						<option value="Rosario">Rosario</option>
+						<option value="Chubut">Chubut</option>
+					</select>
+				</label>
+				<br>
+				<label>
+					<u>Introduzca sus comentarios:</u> <br>
+					<textarea name="Comentarios" style="width: 150px; height: 150px;">
+					</textarea>
+				</label>
+				<br>
+				<label>
+					<u>Estado civil:</u> <br>
+					<label> Casado:
+						<input type="radio" name="Estado" value="Casado"></label>
+					<label> Soltero:
+						<input type="radio" name="Estado" value="Soltero" checked=""></label>
+					<label> Divorciado:
+						<input type="radio" name="Estado" value="Divorciado"></label>
+				</label>
+				<br>
+				<label>
+					<u>Intereses:</u> <br>
+				<label> JavaScript:
+						<input type="checkbox" name="JavaScript"></label>
+					<label> PHP: 
+						<input type="checkbox" name="PHP"></label>
+					<label> Java: 
+						<input type="checkbox" name="Java"></label>
+					<label> Json:
+						<input type="checkbox" name="Json"></label>
+				<label> DB y SQL
+					<input type="checkbox" name="DB y SQL"></label>
+				</label>
+				<br>
+				<input type="submit" value="Enviar">
+			</fieldset>
+		</form>
+	</body>
+</html>

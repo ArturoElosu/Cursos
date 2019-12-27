@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:tns="http://fiscalgis.com.ar/solicitudDatos/response" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://fiscalgis.com.ar/solicitudDatos/response" version="1.0">
+	<xs:element name="LoginResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Header">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="SessionId" type="xs:string"/>
+							<xs:element name="User" type="xs:string"/>
+							<xs:element name="Channel" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Body">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="tns:Usuario"/>
+							<xs:element ref="tns:Productos"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Entidad Usuario -->
+	<xs:element name="Usuario">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="estaRegistrado" type="xs:string"/>
+				<xs:element name="tipoDocumento">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="DNI"/>
+							<xs:enumeration value="CI"/>
+							<xs:enumeration value="CUIL"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="numeroDocumento" type="xs:string"/>
+				<xs:element name="alias" type="xs:string"/>
+				<xs:element name="ultimoAcceso" type="xs:dateTime"/>
+				<xs:element name="email" type="xs:string"/>
+				<xs:element name="pais" type="xs:string"/>
+				<xs:element name="nombre" type="xs:string"/>
+				<xs:element name="telefono" type="xs:string"/>
+				<xs:element name="celular" type="xs:string"/>
+				<xs:element ref="tns:Domicilio"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Entidad Productos -->
+	<xs:element name="Productos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Cuentas">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="tns:Cuenta" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Tarjetas">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="tns:Tarjeta" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Entidad Cuenta -->
+	<xs:element name="Cuenta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="tipoCuenta">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Caja_Ahorro"/>
+							<xs:enumeration value="Cuenta_Corriente"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="numeroCuenta" type="xs:string"/>
+				<xs:element name="sucursal" type="xs:integer"/>
+				<xs:element name="estado" type="xs:string"/>
+				<xs:element name="subCuenta" type="xs:string"/>
+				<xs:element name="idMoneda" type="xs:integer"/>
+				<xs:element name="admiteDepCheque" type="xs:string"/>
+				<xs:element name="saldo" type="xs:decimal"/>
+				<xs:element name="chequesPendienteAcreditar" type="xs:string"/>
+				<xs:element name="cbu" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Entidad Tarjeta -->
+	<xs:element name="Tarjeta">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="tipoTarjeta" type="xs:string"/>
+				<xs:element name="tipoTarjetaNombre" type="xs:string"/>
+				<xs:element name="numeroTarjeta" type="xs:string"/>
+				<xs:element name="saldoPesos" type="xs:decimal"/>
+				<xs:element name="saldoDolares" type="xs:decimal"/>
+				<xs:element name="pagoMinimo" type="xs:decimal"/>
+				<xs:element name="fechaVencimiento" type="xs:date"/>
+				<xs:element name="textoFormaPago" type="xs:string"/>
+				<xs:element name="adicional" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Domicilio del Cliente -->
+	<xs:element name="Domicilio">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="domicilioCalle" type="xs:string"/>
+				<xs:element name="domicilioNumero" type="xs:string"/>
+				<xs:element name="domicilioPiso" type="xs:integer"/>
+				<xs:element name="domicilioProvincia" type="xs:string"/>
+				<xs:element name="domicilioLocalidad" type="xs:string"/>
+				<xs:element name="domicilioCodigoPostal" type="xs:integer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- Elemento Fault -->
+	<xs:element name="ServiceFault">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="faultCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="faultString" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,28 @@
+Profesor: Daniel
+Mail: 
+
+*** Descargar Visual Studio Code ***
+*** Instalar extension live server ***
+
+*VAR
+*** Constructor de variables. Lugar en memoria donde se guarda información.
+*** Tiene varios problemas.
+**** Por más que no se declare una variable como global (var), lo hace. Ej: b=2.
+**** Puede declararse 2 variables de mismo nombre con valores distintos, reemplazando los valores anteriores al último por éste.
+**** Estando una variable declarada dentro de una estructura (ej. un for), permite invocar la variable declarada desde fuera de la misma.
+*** Si una variable es declarada dentro de una función, ésta va a ser local.
+*** Si una variable es declarada dentro de cualquier estructura que no sea una función, va a ser una variable global.
+*LET
+*** No permite declarar la misma variable 2 veces pero si modificar el valor.
+*CONST
+*** No permite declarar la misma variable 2 veces ni modificar el valor.
+
+BOM = Browser Object Model -> conjunto de metodos y propiedades para interactuar con el navegador
+DOM = Document Object Model -> conjunto de metodos y propiedades para interactuar con el documento web.
+
+El BOM contiene al DOM.
+El BOM es "window" en la consola.
+El DOM es la sección "document" de "window"
+
+
+ul>li{item$}*5 hace una lista de 5 items

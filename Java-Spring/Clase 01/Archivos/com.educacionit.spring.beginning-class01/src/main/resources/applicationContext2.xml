@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+   - name:        applicationContext2.xml
+   - description: Spring application context.
+   - author:      Raul Pena (raul.pena@hotmail.com)
+   -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+		 	               http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	
+	
+	<!-- 
+	   - Add beans resources. 
+	   -->
+	<bean id="alertEmail" 
+	      class="com.educacionit.spring.beginning.class01.notification.Alert">
+	      
+        <property name="notification" ref="emailNotificationImpl" />		      
+	      
+    </bean>
+    
+    
+    <bean id="emailNotificationImpl" 
+          class="com.educacionit.spring.beginning.class01.notification.EmailNotificationImpl" />
+    
+    
+    <bean id="alertPush" 
+	      class="com.educacionit.spring.beginning.class01.notification.Alert">
+	      
+        <property name="notification">
+            <bean class="com.educacionit.spring.beginning.class01.notification.PushNotificationImpl" />
+        </property>
+          
+    </bean>          
+    
+     
+    
+</beans>

@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Content-Length: 256
+
+<?xml version="1.0"?>
+<carritodelacompra>
+  <carritodelacompra_numero>1</carritodelacompra_numero>
+  <link rel="cuenta" href="https://ejemplo.es/cliente/1" />
+  <link rel="articulo1" href="https://ejemplo.es/articulo/1" />
+  <link rel="articulo2" href="https://ejemplo.es/articulo/2" />
+</carritodelacompra>

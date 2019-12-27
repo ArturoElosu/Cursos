@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+   - name:        applicationContext1.xml
+   - description: Spring application context.
+   - author:      Raul Pena (raul.pena@hotmail.com)
+   -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+		 	               http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	
+	
+	<!-- 
+	   - Add beans resources. 
+	   -->
+	<bean id="database" 
+	      class="com.educacionit.spring.beginning.class01.search.Database">
+	      
+        <constructor-arg>
+            <map>
+                <entry key="30" value="RCaptain McCallister" />
+                <entry key="32" value="Jacqueline Bouvier"   />
+                <entry key="46" value="Amos Simpson"   />
+                <entry key="44" value="Selma Bouvier"  />
+                <entry key="49" value="Patty Bouvier"  />
+                <entry key="19" value="Lisa Simpson"   />
+                <entry key="12" value="Maggie Simpson" />
+                <entry key="13" value="Bart Simpson"   />
+            </map>   
+        </constructor-arg>
+        <constructor-arg value="10" />			      
+	      
+	    <property name="search" ref="searcherBasic" />
+	    
+    </bean>
+    
+    
+    <bean id="searcherBasic" 
+	      class="com.educacionit.spring.beginning.class01.search.SearcherBasic" />
+    
+    
+    
+</beans>

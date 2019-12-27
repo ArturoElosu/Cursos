@@ -1,0 +1,165 @@
+<!-- 
+   - name: pom.xml
+   - description: maven setup configuration.
+   - author: Raul Pena (raul.pena@hotmail.com)
+   -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+	                http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    
+    
+    <!-- 
+       - POM setup declarations.
+       --> 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.educacionit.spring</groupId>
+	<artifactId>beginning-class01</artifactId>
+    <version>1.0.0</version>
+	<name>beginning-class01</name>
+	<description>Java Educationit Project for learn Springframework.</description>
+	
+	
+	
+	<!--
+       - Developer information.
+       -->
+    <developers>
+        <developer>
+		    <id>raul.g.pena</id>
+		    <name>Raul Pena</name>
+		    <email>raul.pena@hotmail.com</email>
+		</developer>
+    </developers>
+	
+	
+	
+	<!-- 
+       - Properties declarations.
+       -->
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>4.3.5.RELEASE</spring.version>
+	</properties>
+    
+    
+    
+    <!-- 
+       - Setup dependency.
+       -->
+	<dependencies>
+	    <!--
+           - Test dependencies. (Thirds)
+           -->
+        
+        <!-- 
+           - Spring.
+           -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+            <version>4.3.8.RELEASE</version>
+        </dependency>
+        
+        <!-- 
+           - JUnit.
+           -->
+    	<dependency>
+    	    <groupId>junit</groupId>
+    	    <artifactId>junit</artifactId>
+    	    <version>4.12</version>
+	    	<scope>test</scope>
+        </dependency>
+	
+		<dependency>
+	    	<groupId>org.mockito</groupId>
+    	    <artifactId>mockito-all</artifactId>
+	    	<version>1.9.5</version>
+            <scope>test</scope>
+		</dependency>
+        
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        
+        
+        
+        <!--
+           - Compile dependencies. (Thirds)
+           -->
+           
+        <!-- 
+           - Spring.
+           -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <scope>compile</scope>
+            <version>4.3.8.RELEASE</version>
+        </dependency>
+        
+        <!--
+           - Apache.
+           -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <scope>compile</scope>
+            <version>3.5</version>
+        </dependency>
+		<dependency>
+		    <groupId>log4j</groupId>
+		    <artifactId>log4j</artifactId>
+		    <scope>compile</scope>
+		    <version>1.2.17</version>
+		</dependency>
+	</dependencies>
+	
+	
+	
+	<!-- 
+       - Build optiones.
+       -->
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.0.2</version>
+                <configuration>
+
+                    <archive>
+                        <manifestFile>
+                          src/main/resources/META-INF/MANIFEST.MF
+                        </manifestFile>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Sealed>true</Sealed>
+                            <mode>development</mode>
+                            <url>http://www.educacionit.com/</url>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>  
+    </build>
+        	
+    
+    
+</project>
+

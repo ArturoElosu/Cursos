@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>JavaScript Clase 3</title>
+		<script type="text/javascript">
+			var a = new Array();
+
+			var i = 0;
+
+			do {
+				var aux = prompt("Ingresa un número");
+				if (isNaN(aux)){
+					if(aux!="fin"){
+						alert("No es un número!")
+					}
+				} else{
+					a[i] = parseInt(aux);
+					i++;
+				}
+			} while (aux!="fin");
+
+			console.log(a);
+
+			var suma = 0;
+
+			for (var p = 0; p < a.length; p++) {
+				suma = suma + a[p];
+			}
+
+			console.log("Suma= " + suma);
+
+			var promedio = parseInt(suma / a.length);
+
+			console.log("Promedio= " + promedio);
+
+			var min = a[0];
+
+			for (var j = 0 ; j<a.length; j++) {
+				if (min>a[j]) {
+					min = a[j];
+				}
+			}
+
+			console.log("Minimo= " + min);
+
+			var max = a[0];
+
+			for (var m = 0; m<a.length; m++) {
+				if (max<a[m]) {
+					max = a[m];
+				}
+			}
+
+			console.log("Maximo= " + max);
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

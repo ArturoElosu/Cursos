@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+   - name:        applicationContext7.xml
+   - description: Spring application context.
+   - author:      Raul Pena (raul.pena@hotmail.com)
+   -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	                       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+	
+	
+	<!-- 
+	   - Add beans resources. 
+	   -->
+	<bean id="singleBean" 
+	      class="com.educacionit.spring.beginning.class01.beans.Single" 
+	      />
+    
+    <!--  bean id="singleBean" 
+	      init-method="pre"
+	      destroy-method="post"
+	      class="com.educacionit.spring.beginning.class01.beans.Single" 
+	      / -->
+	      
+    <!--  bean id="protoBean" 
+          scope="prototype"
+	      class="com.educacionit.spring.beginning.class01.beans.Single" / -->
+    
+    
+</beans>

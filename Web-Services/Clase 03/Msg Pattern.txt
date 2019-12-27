@@ -1,0 +1,4 @@
+* Request - Response
+* One way (se envía un req y se devuelve un código 200)
+* Notification (proveedor envía una notificación al cliente)
+* Solicit Response (proveedor envía msg primero, el cliente contesta)

@@ -1,0 +1,23 @@
+drop database if exists hibernate;
+create database hibernate;
+use hibernate;
+
+CREATE TABLE `autos` (
+  `au_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `au_marca` varchar(255) NOT NULL DEFAULT '',
+  `au_modelo` varchar(255) NOT NULL DEFAULT '',
+  `au_fecha_venta` date NOT NULL DEFAULT '0000-00-00',
+  `au_precio` float NOT NULL DEFAULT '0',
+  `au_concesionario` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`au_id`)
+);
+
+
+CREATE TABLE `concesionarios` (
+  `co_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `co_nombre` varchar(255) NOT NULL DEFAULT '',
+  `co_direccion` varchar(255) NOT NULL DEFAULT '',
+  PRIMARY KEY (`co_id`)
+);
+
+select * from autos;

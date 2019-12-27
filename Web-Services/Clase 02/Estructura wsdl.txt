@@ -1,0 +1,14 @@
+http://alumno-503-03:8080/WebServiceCliente/clienteWS?wsld -> SoapUI 5.2.1 -> Save -> XMLSpy.
+
+* La sección <types> define, a traves del schema, la estructura y los datos que se envían y se esperan.
+
+* El message <obtenerCliente> es el request.
+
+* Los message <obtenerClienteResponse> y <Exception> son los response que envía el servidor.
+
+* La sección <portType> hace referencia a los mensajes definidos. Define los mensajes que serán enviados.
+
+* El binding hace referencia a cosas que haya definido en el portType. Puede definir algunas cosas. Utiliza un String específico provisto mediante un URL que utiliza HTTP.
+
+* El service hace referencia a cosas que haya definido el binding. Da el nombre al Service y establece la dirreción donde estará escuchando.
+

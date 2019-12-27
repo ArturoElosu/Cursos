@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by v913364 (EMBRACE) -->
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://fiscalgis.com/WebServiceBankingData" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://fiscalgis.com.ar/solicitudDatos/request" xmlns:ns2="http://fiscalgis.com.ar/solicitudDatos/response" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" name="WebServiceBankingData" targetNamespace="http://fiscalgis.com/WebServiceBankingData">
+	<types>
+		<xsd:schema targetNamespace="http://fiscalgis.com.ar/solicitudDatos/request">
+			<!--Login -->
+			<xsd:include schemaLocation="LoginRequest.xsd"/>
+		</xsd:schema>
+		<xsd:schema targetNamespace="http://fiscalgis.com.ar/solicitudDatos/response">
+			<xsd:include schemaLocation="LoginResponse.xsd"/>
+		</xsd:schema>
+	</types>
+	<message name="ObtenerDatosUsuario">
+		<part name="request" element="ns1:LoginRequest"/>
+	</message>
+	<message name="RespObtenerDatosUsuario">
+		<part name="parameters" element="ns2:LoginResponse"/>
+	</message>
+	<message name="MyServiceException">
+		<part name="fault" element="ns2:ServiceFault"/>
+	</message>
+	<portType name="WebServiceBankingData">
+		<operation name="obtenerDatos">
+			<input message="tns:ObtenerDatosUsuario"/>
+			<output message="tns:RespObtenerDatosUsuario"/>
+			<fault message="tns:MyServiceException" name="MyServiceException"/>
+		</operation>
+	</portType>
+	<binding name="WebServiceBDBinding" type="tns:WebServiceBankingData">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="obtenerDatos">
+			<soap:operation soapAction="obtenerDatos"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+			<fault name="MyServiceException">
+				<soap:fault name="MyServiceException" use="literal"/>
+			</fault>
+		</operation>
+	</binding>
+	<service name="WebServiceBanking">
+		<port name="WebServiceBankingData_Port" binding="tns:WebServiceBDBinding">
+			<soap:address location="http://127.0.0.1:8080/WSBankingData/"/>
+		</port>
+	</service>
+</definitions>
