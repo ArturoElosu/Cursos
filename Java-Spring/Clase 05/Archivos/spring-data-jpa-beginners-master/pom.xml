@@ -1,0 +1,163 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
+    
+    
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.research24x7.spring</groupId>
+    <artifactId>spring-data-jpa-beginners</artifactId>
+    <name>spring-data-jpa-beginners</name>
+    <description>Learning Spring Data using JPA.</description>
+    <version>1.0.0</version>
+
+	
+    <properties>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>4.3.5.RELEASE</spring.version>
+	</properties>
+
+	
+    <developers>
+        <developer>
+		    <id>raul.g.pena</id>
+		    <name>Raul Peña</name>
+		    <email>raul.pena@research24x7.com</email>
+		</developer>
+    </developers>
+
+    
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.3.RELEASE</version>
+    </parent>     
+
+    
+    <dependencies>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <scope>test</scope>
+            <version>0.9.5.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>8.4-702.jdbc4</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
+
+        <!--
+           - Compile dependencies.
+           -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+        <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>el-api</artifactId>
+            <scope>provided</scope>
+            <version>2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>javax.el</artifactId>
+            <scope>provided</scope>
+            <version>2.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-daemon</groupId>
+            <artifactId>commons-daemon</artifactId>
+            <scope>provided</scope>
+            <version>1.0.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+	</dependencies>
+    
+   	
+	<build>
+        <finalName>spring-data-jpa-beginners</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.6.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+        	
+    
+    
+</project>

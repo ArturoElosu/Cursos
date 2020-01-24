@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c59435d8-49be-4bca-88e1-d4de6e3e0055" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1WBD6A04eDgqV0ezY7NmDhZUTyc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="CountryRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-data-jpa-beginners" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.research24x7.demo.spring.data.jpa.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.research24x7.demo.spring.data.jpa.test" />
+      <option name="MAIN_CLASS_NAME" value="com.research24x7.demo.spring.data.jpa.test.CountryRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CountryRepositoryTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c59435d8-49be-4bca-88e1-d4de6e3e0055" name="Default Changelist" comment="" />
+      <created>1578613916729</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578613916729</updated>
+      <workItem from="1578613920890" duration="2663000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom" timestamp="1578617388925">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1578617388925" />
+    <state width="1237" height="263" key="GridCell.Tab.0.center" timestamp="1578617388925">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1578617388925" />
+    <state width="1237" height="263" key="GridCell.Tab.0.left" timestamp="1578617388925">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1578617388925" />
+    <state width="1237" height="263" key="GridCell.Tab.0.right" timestamp="1578617388925">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="263" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1578617388925" />
+  </component>
+</project>

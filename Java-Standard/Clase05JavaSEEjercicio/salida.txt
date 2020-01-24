@@ -1,0 +1,3 @@
+Marca, Modelo, Año, Precio Original, Precio Final
+VW,Virtus,2018,400000.0,500000.0
+VW,Polo,2012,440000.0,550000.0
